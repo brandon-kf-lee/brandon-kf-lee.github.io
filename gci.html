@@ -53,11 +53,19 @@
                                        the gap between rigid casts and less suportive braces.</p>
                                 </header>
             
-                                <div class="image main"><img src="images/gci/ankle_brace.jpg" alt="3D-printed ankle brace on a foot" />The final prototype ankle brace on my teammate's foot.</div>
+                                <div class="image main">
+                                    <img src="images/gci/ankle_brace.jpg" alt="3D-printed ankle brace on a foot" />The final prototype ankle brace on my teammate's foot.
+                                </div>
+
+                                <h2>Why?</h2>
                                 <p>This project was a part of Chapman University's Grand Challenges Initiative (GCI) program. Lasting my first and second years, it gathered students from the Fowler School of Engineering and Schmid College of Science and Technology together and formed groups to take on a grand challenge facing the world. My team was quite multidisciplinary: we had a Biology major, an Environmental Science and Policy Major, a Computer Science major, and a Computer Engineering major (me). We decided to take on the field of injuries and injury recovery. We identified a drawback in the conventional post-ankle injury recovery method, noting that its lack of customization hindered rehabilitation efficiency and raised the risk of re-injury. Our initiative sought to leverage the diverse and adaptable properties of 3D-printing and 3D-scanning to design a tailored ankle brace, ensuring an ideal fit for each user's foot. This brace incorporated two materials—one rigid for injury support and one flexible for comfort and mobility.</p>
-                                <p>Besides working as the team leader, delegating tasks to my teammates, my primary specialty in this project was as the 3D modeler and manufacturer. Before this project, I had never worked with 3D-printers or 3D-printing software. Through sheer will and determination (and lots and lots of YouTube videos), I learned how to consistently print complex mesh brace support structures in many different materials (PETG, polycarbonate, HIPS, etc.) and use Fusion 360 to model a unique brace around a 3D-scanned foot.</p>
-                            
-                                <div class="image main"><img class="eighty" src="images/gci/brace_supports.png" alt="" /></div>
+                                <p>Besides working as the team leader, delegating tasks to my teammates, my primary specialty in this project was as the 3D modeler and manufacturer. Before this project, I had never worked with 3D-printers or 3D-printing software. Through sheer will and determination (and lots and lots of YouTube videos), I learned how to consistently print complex mesh brace support structures in many different materials (PETG, polycarbonate (PC), HIPS, etc.) and use Fusion 360 to model a unique brace around a 3D-scanned foot.</p>
+                                <div class="image main">
+                                    <img class="eighty" src="images/gci/brace_supports.png" alt="" />
+                                    The brace support structures we used to test material suitability (left to right: PETG, PC, HIPS).
+                                </div>
+
+                                <h2>Polycarbonate Problems</h2>
                                 <p>
                                     <span class="image left">
                                         <img src="images/gci/figure1.png" alt="Optically clear microscopic view of a PC print" /> Figure 1
@@ -65,12 +73,47 @@
                                     </span>
                                         My first step in this project was determining which plastic material we would use. I first thought of using polycarbonate (PC) as the rigid material, so I set out to test it. I encountered a few issues, but the worst was moisture absorption. Like most 3D printable filaments, PC has an affinity for absorbing moisture from the air, especially in a humid environment. Microscopic air bubbles form in the filament, its optical clarity degrades, the filament burns while printing, and its structural integrity significantly weakens. Figure 1 shows a microscopic view of a normal print in transparent PC without any defects. Save for some slight streaking due to suboptimal print settings, the print is perfectly translucent. Figure 2 shows another PC print after the filament has been sitting out for a few weeks. The entire print is filled with bubbles and spotted with slightly browned burns, which could cause the entire print to fail.
                                 </p>
-
                                 <p>Fixing this issue required drying the filament to drive out all the moisture. We placed it in a commercial filament drier and ran it at 70°C for over 12 hours. Even though this solution is convenient, it is not ideal since repeated heating and cooling cycles may deteriorate the material over time. A better long-term solution would be to always store the filament with silica desiccant packs or in a hot, dry environment.</p>        
-                                   <div class="image main"><img src="images/gci/poster.jpg" alt="Poster used in project presentation" />The poster summarizing the project that we used during the Annual GCI Project Showcase <a class="caption" href="images/gci/poster.jpg" target="_blank">(Click to enlarge)</a></div>
+                                
+                                <h2>Testing</h2>
+                                <div class="video">
+                                    <video controls="controls"><source src="images/gci/petg_test.mp4" type="video/mp4" /></video>
+                                    A slow motion video of a PETG support peice undergoing flexure texting.
+                                </div>
+                                <p>After determining that I could manufacture the brace supports reliably, the team and I set out to test their mechanical properties. To choose which material we wanted to proceed with, we needed to determine the force required to damage each support permanently. Utilizing an Instron Universal Testing Machine, we used a 3-point bend rig to perform static flexure testing on each brace support of each material in the center until failure. This is done by supporting the brace at the edges and applying a load at its midpoint. After repeating each test 5 times, I averaged the data to generate one comprehensive stress-strain curve.</p>
+                                <div class="image main">
+                                    <img src="images/gci/stress_strain_curve.png" alt="Stress-strain curve of the results of testing" />
+                                    The averaged (mean) data of each test.
+                                </div>
+                                <p>
+                                    <span class="image right">
+                                        <img src="images/gci/petg_fractured.png" alt="Two fractured PETG brace support peices" /> PETG's fracture patterns
+                                    </span>
+                                    By and large, the best material to proceed with would be PC. It can withstand a large amount of force, around 160N, before permanent plastic deformation and eventually fracturing. It has the longest elastic region (how much the material can bend before plastic deformation, shown under the linear region). It can also handle roughly twice the force of HIPS even though it is just as flexible, as shown by equivalent Young's moduli (the slope of the linear region of the curve).
+                                    However, printing in it was just a pain. It does not like to cooperate, the print quality is temperamental if stored incorrectly, and it is challenging to print consistently. Therefore, we decided to proceed with our next best option: PETG. It is the most popular material of the three, is the stiffest (denoted by the steepest Young's modulus), and may be the best at resisting joint flexion. Nevertheless, it completely fails at its ultimate strength (the maximum stress the material can withstand, as shown by the testing video). This is not a concern in nominal conditions, however. According to a study on wrist flexion, the maximum wrist flexion torques of the average person was about 8 Nm[1]. We do not expect a human wrist to naturally exert enough force to bend the brace past a few millimeters of displacement.
+                                </p>
+
+                                <h2>Prototyping and Modeling</h2>
+                                <p>After choosing our rigid material and deciding that TPU was really our only feasible flexible material, I started 3D modeling the brace in Fusion 360.</p>
+                                <div class="image main">
+                                    <img class="forty" src="images/gci/brace_prototype_1.png" alt="First brace prototype" />
+                                    The first brace prototype modeled in Fusion360, split into the different components to be printed.
+                                </div>
+                                <p>The mesh portion of the brace is to be made of a soft & flexible material, and the triangular-ish supportive side pieces are to be made of a rigid material. In the design, one side is mesh and the other is solid; this was done because we needed to determine which design would be best. The rigid support piece is different from the shape we tested with, but we are stuck with the results since I started modeling the brace after deciding how to test the materials. I do not predict that the results are significantly different relative to each other.</p>
+
+                                <h2>Poster</h2>
+                                <div class="image main">
+                                    <img src="images/gci/poster.jpg" alt="Poster used in project presentation" />
+                                    The poster summarizing the project that we used during the Annual GCI Project Showcase <a href="images/gci/poster.jpg" target="_blank">(Click to enlarge)</a>
+                                </div>
                             </section>
 
+                            <section>
+                                <h3>Sources:</h3>
+                                <p>[1] Yoshii Y, Yuine H, Kazuki O, Tung W, Ishii T. Measurement of wrist flexion and extension torques in different forearm positions. BioMedical Engineering OnLine. 2015;14:115. doi:10.1186/s12938-015-0110-9</p>
+                            </section>
                     </div>
+
                 <!-- Footer -->
                     <footer id="footer">
                         <section>

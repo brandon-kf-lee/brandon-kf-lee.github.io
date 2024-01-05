@@ -2636,7 +2636,7 @@ input, select, textarea {
 
         .image.main {
             display: block;
-            margin: 4rem 0;
+            margin: 2rem 0;
             width: 100%;
             text-align: center;
         }
@@ -2651,6 +2651,13 @@ input, select, textarea {
 
             .image.main img.eighty {
                 width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            
+            .image.main img.forty {
+                width: 40%;
                 margin-left: auto;
                 margin-right: auto;
                 text-align: center;
@@ -2684,6 +2691,21 @@ input, select, textarea {
             -webkit-transform: scale(1.05);
             -ms-transform: scale(1.05);
             transform: scale(1.05);
+        }
+
+
+    .video {
+        border: 0;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        margin: 0rem 0 1rem 0;
+    }
+
+        .video video{
+            display: block;
+            width: 100%;
+            text-align: center;
         }
 
 /* Actions */
@@ -3811,6 +3833,10 @@ input, select, textarea {
 
             #main > .post.featured {
                 text-align: center;
+            }
+
+            #main > .post h2{
+                margin: 2rem 0 1rem 0;
             }
 
             @media screen and (max-width: 1280px) {
