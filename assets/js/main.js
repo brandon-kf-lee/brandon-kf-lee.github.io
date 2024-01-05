@@ -83,6 +83,16 @@
 
 			};
 
+			/* Keep parallax off fo everything except main index page since it breaks with long webpages */
+			if (window.location.pathname.split("/").pop() != "index.html") {
+				off();
+			}
+			else {
+				breakpoints.on('>large', on);
+				breakpoints.on('<=large', off);
+			}
+			
+/*
 			// Disable parallax on ..
 				if (browser.name == 'ie'			// IE
 				||	browser.name == 'edge'			// Edge
@@ -97,7 +107,7 @@
 					breakpoints.on('<=large', off);
 
 				}
-
+*/
 		});
 
 		$window
