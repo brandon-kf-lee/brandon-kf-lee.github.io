@@ -1,0 +1,3 @@
+# ignore ALL files in ANY directory named Templates and .DS_Store
+Templates/
+.DS_Store/
