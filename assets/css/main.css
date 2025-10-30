@@ -2587,6 +2587,44 @@ input, select, textarea {
             font-family: 'Font Awesome 5 Brands';
         }
 
+        /* Devpost SVG styling */
+        .devpost-icon img {
+            width: 1.5em;            
+            height: 1.5em;
+            vertical-align: text-bottom;  /* aligns with text label */
+            display: inline-block;
+            transition: color 0.3s; /* smooth hover transition */
+            margin-left: 0.3em; /* adds space from previous icon */
+            filter: invert(1); /* fully inverts colors */
+        }
+
+        /* Hover color to match other icons */
+        .icons li a:hover img {
+            filter: brightness(0) saturate(100%) invert(28%) sepia(94%) saturate(2783%) hue-rotate(207deg) brightness(97%) contrast(102%);
+        }
+
+        /* Devpost alt SVG styling */
+        .alt.devpost-icon img {
+            width: 2.3em;            
+            height: 2.3em;
+            vertical-align: top;  /* aligns with text label */
+            display: inline-block;
+            transition: color 0.5s; /* smooth hover transition */
+            margin-left: -0.01em;
+            filter: invert(0);
+
+            /* Circle styles */
+            border: 2px solid #e2e2e2;
+            border-radius: 50%;
+            padding: 0.4em; /* adds space between image and circle */
+            background: transparent;
+        }
+
+        /* Hover color to match other icons */
+        .alt.icons li a:hover img {
+            filter: brightness(0) saturate(100%) invert(28%) sepia(94%) saturate(2783%) hue-rotate(207deg) brightness(97%) contrast(102%);
+        }
+
 /* Image */
 
     .image {
